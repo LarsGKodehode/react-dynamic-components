@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// Content
+import mainContent from "./data/mainContent";
+
+// Components
+import ComponentWithProps from "./components/ComponentWithProps";
+import ComponentWithChildProps from "./components/ComponentWithChildProps";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{mainContent.title}</h1>
+
+      <img src="someFilePath" alt="Image description"></img>
+
+      <ComponentWithProps
+        title="Some other title"
+        whateverYouWant="Some more props"
+        someArray={["array1", "array2"]}
+      />
+
+      <a href="www.example.com">Home</a>
+
+      <ComponentWithChildProps>
+        <h3>Some element</h3>
+        <p>Some paragraph</p>
+      </ComponentWithChildProps>
+
     </div>
   );
 }
